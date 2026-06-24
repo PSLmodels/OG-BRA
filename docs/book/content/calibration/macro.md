@@ -3,7 +3,7 @@
 
 ## Economic Assumptions
 
-As the default rate of labor augmenting technological change, $g_y$, we use a value of 3.6%.  The average annual growth rate in GDP per capita in the Brazil between 2000 and 2019 is 3.6% per year.
+As the default rate of labor augmenting technological change, $g_y$, we use a value of 3.6%.  The average annual growth rate in GDP per capita in Brazil between 2000 and 2019 is 3.6% per year.
 
 ## Open Economy Parameters
 

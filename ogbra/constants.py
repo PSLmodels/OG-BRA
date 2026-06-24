@@ -127,7 +127,7 @@ GROUP_LABELS = {
 }
 
 CBO_UNITS = {
-    "Y": r"Billions of ₱",
+    "Y": r"Billions of R$",
     "r": "Percent",
     "w_growth": "Percent",
     "L_growth": "Percent",

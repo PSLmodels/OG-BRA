@@ -16,7 +16,7 @@ import ogbra
 
 
 CUR_DIR = os.path.dirname(os.path.realpath(__file__))
-UN_COUNTRY_CODE = "608"
+UN_COUNTRY_CODE = "076"
 plot_path = os.path.join(CUR_DIR, "book", "content", "calibration", "images")
 YEAR_TO_PLOT = 2023
 # update path for demographics graphdiag plots

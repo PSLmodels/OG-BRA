@@ -2,7 +2,7 @@
 # Book settings
 title                    : OG-BRA
 author                   : Marcelo LaFleur, Richard W. Evans, and Jason DeBacker
-copyright                : '2024'
+copyright                : '2026'
 logo                     : '..//OG-BRA_logo.png'
 
 ####################################################
@@ -63,7 +63,7 @@ launch_buttons:
 ####################################################
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/EAPD-DRB/OG-BRA
+  url: https://github.com/PSLmodels/OG-BRA
   branch: main
   path_to_book: 'docs/book'
 

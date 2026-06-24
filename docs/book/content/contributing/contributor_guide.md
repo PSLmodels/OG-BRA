@@ -23,7 +23,7 @@ If you have already completed the {ref}`Sec_SetupPython` and {ref}`Sec_SetupGit`
 
 3. Tell Git to remember your GitHub password by following steps 1-4 on [password setup](https://help.github.com/articles/caching-your-github-password-in-git/).
 
-4. Sign in to GitHub and create your own [remote](https://help.github.com/articles/github-glossary/#remote) [repository](https://help.github.com/articles/github-glossary/#repository) (repo) of `OG-BRA` by clicking [Fork](https://help.github.com/articles/github-glossary/#fork) in the upper right corner of the [OG-BRA GitHub repository page](https://github.com/EAPD-DRB/OG-BRA). Select your username when asked "Where should we fork this repository?"
+4. Sign in to GitHub and create your own [remote](https://help.github.com/articles/github-glossary/#remote) [repository](https://help.github.com/articles/github-glossary/#repository) (repo) of `OG-BRA` by clicking [Fork](https://help.github.com/articles/github-glossary/#fork) in the upper right corner of the [OG-BRA GitHub repository page](https://github.com/PSLmodels/OG-BRA). Select your username when asked "Where should we fork this repository?"
 
 5. From your command line, navigate to the directory on your computer where you would like your local repo to live.
 
@@ -39,7 +39,7 @@ If you have already completed the {ref}`Sec_SetupPython` and {ref}`Sec_SetupGit`
 
     ```
       $ cd OG-BRA
-      OG-BRA$ git remote add upstream https://github.com/EAPD-DRB/OG-BRA.git
+      OG-BRA$ git remote add upstream https://github.com/PSLmodels/OG-BRA.git
     ```
 
 9. Create a conda environment with all of the necessary packages to execute the source code.
@@ -63,7 +63,7 @@ The process of creating the `ogbra-dev` conda environment can take up to 10 minu
     ```
 
 If you have made it this far, you've successfully made a remote copy (a
-fork) of the central `OG-BRA` repo. That remote repo is hosted on GitHub.com at [https://github.com/EAPD-DRB/OG-BRA](https://github.com/EAPD-DRB/OG-BRA). You have also created a local repo (a [clone](https://help.github.com/articles/github-glossary/#clone)) that lives on your machine and only you can see; you will make your changes to
+fork) of the central `OG-BRA` repo. That remote repo is hosted on GitHub.com at [https://github.com/PSLmodels/OG-BRA](https://github.com/PSLmodels/OG-BRA). You have also created a local repo (a [clone](https://help.github.com/articles/github-glossary/#clone)) that lives on your machine and only you can see; you will make your changes to
 the OG-BRA model by editing the files in the `OG-BRA`
 directory on your machine and then submitting those changes to your
 local repo. As a new contributor, you will push your changes from your
@@ -128,7 +128,7 @@ situations, in which case other contributors are here to help.
     ```
      OG-BRA/ogbra$  pytest -m "not needs_puf and not regression"
     ```
-   Note that running this full suite of tests may take close to 24 hours (depending on your hardware).  To run the small set of tests that run on each pull request (and take about 40 minutes), use  `pytest -m "not needs_puf and not local and not regression"`.  If the tests do not pass, try to fix the issue by using the information provided by the error message. If this isn't possible or doesn't work, the core maintainers are here to help via a [GitHub Issue](https://github.com/EAPD-DRB/OG-BRA/issues).
+   Note that running this full suite of tests may take close to 24 hours (depending on your hardware).  To run the small set of tests that run on each pull request (and take about 40 minutes), use  `pytest -m "not needs_puf and not local and not regression"`.  If the tests do not pass, try to fix the issue by using the information provided by the error message. If this isn't possible or doesn't work, the core maintainers are here to help via a [GitHub Issue](https://github.com/PSLmodels/OG-BRA/issues).
 
 4. Now you're ready to [commit](https://help.github.com/articles/github-glossary/#commit) your changes to your local repo using the code below. The first line of code tells `Git` to track a file. Use "git status" to find all the files you've edited, and "git add" each of the files that you'd like `Git` to track. As a rule, do not add large files. If you'd like to add a file that is larger than 25 MB, please contact the other contributors and ask how to proceed. The second line of code commits your changes to your local repo and allows you to create a commit message; this should be a short description of your changes.
 

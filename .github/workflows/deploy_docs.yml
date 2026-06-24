@@ -14,7 +14,7 @@ on:
       - './ogbra/**.py'
 jobs:
   build-and-deploy:
-    if: github.repository == 'EAPD-DRB/OG-BRA'
+    if: github.repository == 'PSLmodels/OG-BRA'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

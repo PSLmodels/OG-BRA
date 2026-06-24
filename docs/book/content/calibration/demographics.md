@@ -53,7 +53,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
 (SecDemogFert)=
 ## Fertility rates
 
-   Our data for Brazil fertility rates by age come from United Nations fertility rate data for a country for some range of years (at least one year) and by age. The `country_id=608` is for the Brazil. These data come from the United Nations Data Portal API for UN population data (see https://population.un.org/dataportal/about/dataapi). The UN variable code for Population by 1-year age groups and sex is "47" and that for Fertility rates by age of mother (1-year) is "68".
+   Our data for Brazil fertility rates by age come from United Nations fertility rate data for a country for some range of years (at least one year) and by age. The `country_id=076` is for Brazil. These data come from the United Nations Data Portal API for UN population data (see https://population.un.org/dataportal/about/dataapi). The UN variable code for Population by 1-year age groups and sex is "47" and that for Fertility rates by age of mother (1-year) is "68".
 
   {numref}`Figure %s <FigFertRatesBRA>` was created using the [`ogcore.demographics.get_fert()`](https://github.com/PSLmodels/OG-Core/blob/master/ogcore/demographics.py#L146) function, which downloaded the data from the United National Data Portal API and plotted it in Python.[^un_data_portal]
 
@@ -67,7 +67,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
       totpers=100,
       min_age=0,
       max_age=99,
-      country_id="608",
+      country_id="076",
       start_year=YEAR_TO_PLOT,
       end_year=YEAR_TO_PLOT,
       graph=True,
@@ -108,7 +108,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
       totpers=100,
       min_age=0,
       max_age=99,
-      country_id="608",
+      country_id="076",
       start_year=YEAR_TO_PLOT,
       end_year=YEAR_TO_PLOT,
       graph=True,
@@ -156,7 +156,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
       mort_rates=None,
       infmort_rates=None,
       pop_dist=None,
-      country_id="608",
+      country_id="076",
       start_year=YEAR_TO_PLOT,
       end_year=YEAR_TO_PLOT + 50,
       graph=True,

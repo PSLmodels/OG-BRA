@@ -13,7 +13,7 @@ kernelspec:
 (Chap_LfEarn)=
 # Lifetime Earnings Profiles
 
-Among households in `OG-BRA`, we model variations in the labor productivity over the lifecycle and between households of different skill groups. Together, these variations in productivity generate a distribution of earnings that is calibrated to match the level of inequality in the Brazil. This chapter describes the calibration of the lifecycle earnings profiles and the distribution of earnings in the model.
+Among households in `OG-BRA`, we model variations in the labor productivity over the lifecycle and between households of different skill groups. Together, these variations in productivity generate a distribution of earnings that is calibrated to match the level of inequality in Brazil. This chapter describes the calibration of the lifecycle earnings profiles and the distribution of earnings in the model.
 
 Differences among workers' productivity is one of the key dimensions of heterogeneity to model in a micro-founded macroeconomy. In this chapter, we characterize this heterogeneity as deterministic lifetime productivity paths to which new cohorts of agents in the model are randomly assigned. In `OG-BRA`, households' labor income comes from the equilibrium wage and the agent's endogenous quantity of labor supply. In this section, we augment the labor income expression with an individual productivity $e_{j,s}$, where $j$ is the index of the ability type or path of the individual and $s$ is the age of the individual with that ability path.
 

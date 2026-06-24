@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     name: Publish to PyPI
-    if: github.repository == 'EAPD-DRB/OG-BRA'
+    if: github.repository == 'PSLmodels/OG-BRA'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
