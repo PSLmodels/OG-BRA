@@ -2,9 +2,9 @@
 
 | | |
 | --- | --- |
-| Org | [![United Nations DESA](https://img.shields.io/badge/United%20Nations%20DESA-blue)](https://www.un.org/en/desa) [![PSL cataloged](https://img.shields.io/badge/PSL-cataloged-a0a0a0.svg)](https://www.PSLmodels.org) [![OS License: CC0-1.0](https://img.shields.io/badge/OS%20License-CC0%201.0-yellow)](https://github.com/EAPD-DRB/OG-BRA/blob/main/LICENSE) |
+| Org | [![PSL cataloged](https://img.shields.io/badge/PSL-cataloged-a0a0a0.svg)](https://www.PSLmodels.org) [![OS License: CC0-1.0](https://img.shields.io/badge/OS%20License-CC0%201.0-yellow)](https://github.com/PSLmodels/OG-BRA/blob/main/LICENSE) |
 | Package | [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31013/) [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3116/) [![PyPI Latest Release](https://img.shields.io/pypi/v/ogbra.svg)](https://pypi.org/project/ogbra/) [![PyPI Downloads](https://img.shields.io/pypi/dm/ogbra.svg?label=PyPI%20downloads)](https://pypi.org/project/ogbra/) |
-| Testing | ![example event parameter](https://github.com/EAPD-DRB/OG-BRA/actions/workflows/build_and_test.yml/badge.svg?branch=main) ![example event parameter](https://github.com/EAPD-DRB/OG-BRA/actions/workflows/deploy_docs.yml/badge.svg?branch=main) ![example event parameter](https://github.com/EAPD-DRB/OG-BRA/actions/workflows/check_format.yml/badge.svg?branch=main) [![Codecov](https://codecov.io/gh/EAPD-DRB/OG-BRA/branch/main/graph/badge.svg)](https://codecov.io/gh/EAPD-DRB/OG-BRA) |
+| Testing | ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/build_and_test.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/deploy_docs.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/check_format.yml/badge.svg?branch=main) [![Codecov](https://codecov.io/gh/PSLmodels/OG-BRA/branch/main/graph/badge.svg)](https://codecov.io/gh/PSLmodels/OG-BRA) |
 
 OG-BRA is an overlapping-generations (OG) model that allows for dynamic general equilibrium analysis of fiscal policy for Brazil. OG-BRA is built on the OG-Core framework. The model output includes changes in macroeconomic aggregates (GDP, investment, consumption), wages, interest rates, and the stream of tax revenues over time. Regularly updated documentation of the model theory--its output, and solution method--and the Python API is available at https://pslmodels.github.io/OG-Core and documentation of the specific Brazil calibration of the model will be available soon.
 
@@ -68,4 +68,4 @@ The core maintainers of the OG-BRA repository are:
 
 ## Citing OG-BRA
 
-OG-BRA (Version #.#.#)[Source code], https://github.com/EAPD-DRB/OG-BRA
+OG-BRA (Version #.#.#)[Source code], https://github.com/PSLmodels/OG-BRA

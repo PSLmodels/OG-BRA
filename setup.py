@@ -12,10 +12,10 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     long_description=longdesc,
     keywords="BRA Brazil calibration of large scale overlapping generations model of fiscal policy",
-    url="https://github.com/EAPD-DRB/OG-BRA/",
+    url="https://github.com/PSLmodels/OG-BRA/",
     download_url="https://github.com/Atanceplus/OG-BRA",
     project_urls={
-        "Issue Tracker": "https://github.com/EAPD-DRB/OG-BRA/issues",
+        "Issue Tracker": "https://github.com/PSLmodels/OG-BRA/issues",
     },
     packages=["ogbra"],
     package_data={"ogbra": ["ogbra_default_parameters.json", "data/*"]},
