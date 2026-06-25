@@ -30,7 +30,8 @@ class CustomHttpAdapter(requests.adapters.HTTPAdapter):
 
 def get_legacy_session():
     ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
-    ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT  #in Python 3.12 you will be able to switch from 0x4 to ssl.OP_LEGACY_SERVER_CONNECT.
+    ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT  #in Python 3.12 you
+    # will be able to switch from 0x4 to ssl.OP_LEGACY_SERVER_CONNECT.
     session = requests.session()
     session.mount("https://", CustomHttpAdapter(ctx))
     return session

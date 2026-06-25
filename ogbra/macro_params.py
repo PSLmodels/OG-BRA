@@ -42,12 +42,15 @@ def get_macro_params(
         "GDP per capita (constant 2015 US$)": "NY.GDP.PCAP.KD",
         "Real GDP (constant 2015 US$)": "NY.GDP.MKTP.KD",
         "Nominal GDP (current US$)": "NY.GDP.MKTP.CD",
-        "General government final consumption expenditure (current US$)": "NE.CON.GOVT.CD",
-        "External debt stocks, public and publicly guaranteed (PPG) (DOD, current US$)": "DT.DOD.DPPG.CD",
+        "General government final consumption expenditure "
+        + "(current US$)": "NE.CON.GOVT.CD",
+        "External debt stocks, public and publicly guaranteed (PPG) "
+        + "(DOD, current US$)": "DT.DOD.DPPG.CD",
         "External debt stocks, total (DOD, current US$)": "DT.DOD.DECT.CD",
         r"External debt stocks (% of GNI)": "DT.DOD.DECT.GN.ZS",
         r"Central government debt, total (% of GDP)": "GC.DOD.TOTL.GD.ZS",
-        r"General government final consumption expenditure (% of GDP)": "NE.CON.GOVT.ZS",
+        r"General government final consumption expenditure "
+        + r"(% of GDP)": "NE.CON.GOVT.ZS",
     }
     try:
         # pull series of interest from the WB using pandas_datareader
@@ -76,7 +79,8 @@ def get_macro_params(
                 wb_data_a[r"External debt stocks (% of GNI)"]
                 * (
                     wb_data_a[
-                        "External debt stocks, public and publicly guaranteed (PPG) (DOD, current US$)"
+                        "External debt stocks, public and publicly "
+                        + "guaranteed (PPG) (DOD, current US$)"
                     ]
                     / wb_data_a[
                         "External debt stocks, total (DOD, current US$)"
@@ -100,16 +104,18 @@ def get_macro_params(
         macro_parameters["alpha_G"] = [
             (
                 wb_data_a[
-                    r"General government final consumption expenditure (% of GDP)"
+                    r"General government final consumption "
+                    + r"expenditure (% of GDP)"
                 ].loc[data_end_date.year]
                 / 100
             )
         ]
-    except:
+    except ConnectionError:
         print("Failed to retrieve data from World Bank")
         print("Will not update the following parameters:")
         print(
-            "[initial_debt_ratio, initial_foreign_debt_ratio, zeta_D, g_y, alpha_G]"
+            "[initial_debt_ratio, initial_foreign_debt_ratio, zeta_D, "
+            + "g_y, alpha_G]"
         )
 
     """
@@ -133,7 +139,8 @@ def get_macro_params(
         df_temp = pd.read_csv(csv_content)
     else:
         print(
-            f"Failed to retrieve data. HTTP status code: {response.status_code}"
+            "Failed to retrieve data. HTTP status code: "
+            + f"{response.status_code}"
         )
     ilo_data = df_temp[["time", "obs_value"]]
     # find gamma, capital's share of income
@@ -156,14 +163,16 @@ def get_macro_params(
     # alpha_T, non-social security benefits as a fraction of GDP
     # can't find this specifically, so use primary expenditures minus
     # final consumption expenditures
-    # source: https://www.tesourotransparente.gov.br/publicacoes/central-government-primary-balance-rtn-english/2024/10
+    # source: https://www.tesourotransparente.gov.br/publicacoes/
+    # central-government-primary-balance-rtn-english/2024/10
     macro_parameters["alpha_T"] = [0.094]
 
     """"
     Esimate the discount on sovereign yields relative to private debt
     Follow the methodology in Li, Magud, Werner, Witte (2021)
     available at:
-    https://www.imf.org/en/Publications/WP/Issues/2021/06/04/The-Long-Run-Impact-of-Sovereign-Yields-on-Corporate-Yields-in-Emerging-Markets-50224
+    https://www.imf.org/en/Publications/WP/Issues/2021/06/04/
+    The-Long-Run-Impact-of-Sovereign-Yields-on-Corporate-Yields-in-Emerging-Markets-50224
 
     Steps:
     1) Generate modelled corporate yields (corp_yhat) for a range of
