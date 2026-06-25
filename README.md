@@ -3,26 +3,36 @@
 | | |
 | --- | --- |
 | Org | [![PSL cataloged](https://img.shields.io/badge/PSL-cataloged-a0a0a0.svg)](https://www.PSLmodels.org) [![OS License: CC0-1.0](https://img.shields.io/badge/OS%20License-CC0%201.0-yellow)](https://github.com/PSLmodels/OG-BRA/blob/main/LICENSE) |
-| Package | [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31013/) [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3116/) [![PyPI Latest Release](https://img.shields.io/pypi/v/ogbra.svg)](https://pypi.org/project/ogbra/) [![PyPI Downloads](https://img.shields.io/pypi/dm/ogbra.svg?label=PyPI%20downloads)](https://pypi.org/project/ogbra/) |
-| Testing | ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/build_and_test.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/deploy_docs.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/check_format.yml/badge.svg?branch=main) [![Codecov](https://codecov.io/gh/PSLmodels/OG-BRA/branch/main/graph/badge.svg)](https://codecov.io/gh/PSLmodels/OG-BRA) |
+| Package | [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3119/) [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3129/) [![PyPI Latest Release](https://img.shields.io/pypi/v/ogbra.svg)](https://pypi.org/project/ogbra/) [![PyPI Downloads](https://img.shields.io/pypi/dm/ogbra.svg?label=PyPI%20downloads)](https://pypi.org/project/ogbra/) [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff) |
+| Testing | ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/build_and_test.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/deploy_docs.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/check_ruff.yml/badge.svg?branch=main) [![Codecov](https://codecov.io/gh/PSLmodels/OG-BRA/branch/main/graph/badge.svg)](https://codecov.io/gh/PSLmodels/OG-BRA) |
 
 OG-BRA is an overlapping-generations (OG) model that allows for dynamic general equilibrium analysis of fiscal policy for Brazil. OG-BRA is built on the OG-Core framework. The model output includes changes in macroeconomic aggregates (GDP, investment, consumption), wages, interest rates, and the stream of tax revenues over time. Regularly updated documentation of the model theory--its output, and solution method--and the Python API is available at https://pslmodels.github.io/OG-Core and documentation of the specific Brazil calibration of the model will be available soon.
 
 
 ## Using and contributing to OG-BRA
 
-* If you are installing on a Mac computer, install XCode Tools. In Terminal: `xcode-select —install`
-* Download and install the appropriate [Anaconda distribution](https://www.anaconda.com/products/distribution#Downloads) of Python. Select the correct version for you platform (Windows, Intel Mac, or M1 Mac).
-* In Terminal:
-  * Make sure the `conda` package manager is up-to-date: `conda update conda`.
-  * Make sure the Anaconda distribution of Python is up-to-date: `conda update anaconda`.
-* Fork this repository and clone your fork of this repository to a directory on your computer.
-* From the terminal (or Anaconda command prompt), navigate to the directory to which you cloned this repository and run `conda env create -f environment.yml`. The process of creating the `ogbra-dev` conda environment should not take more than five minutes.
-* Then, `conda activate ogbra-dev`
-* Then install by `pip install -e .`
+There are two primary methods for installing and running OG-BRA on your computer locally. The first and simplest method is to download the most recent `ogbra` Python package from the Python Package Index ([PyPI.org](https://pypi.org/project/ogbra/)). The second option is to fork and clone the most recent version of OG-BRA from its GitHub repository and install the `ogbra` package with its development dependencies using `uv`. Both methods are detailed below.
+
+### Installing and Running OG-BRA from PyPI
+
+* On macOS, first install Xcode Command Line Tools (in Terminal: `xcode-select --install`).
+* Open your terminal and install the [`ogbra`](https://pypi.org/project/ogbra/) package from the Python Package Index by typing `pip install ogbra`.
+* Navigate to a folder `./YourFolderName/` where you want to save scripts to run OG-BRA and output from the simulations in those scripts.
+* Copy the python script [`run_og_bra.py`](https://github.com/PSLmodels/OG-BRA/blob/main/examples/run_og_bra.py) from the OG-BRA GitHub repository into your folder as `./YourFolderName/run_og_bra.py`.
+* Run the model with an example reform from terminal/command prompt by typing `python run_og_bra.py`.
+
+### Installing and Running OG-BRA from the GitHub repository
+
+* On macOS, first install Xcode Command Line Tools (in Terminal: `xcode-select --install`).
+* Install [`uv`](https://docs.astral.sh/uv/) by following the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) for your platform (or simply run `pip install uv`).
+* Fork this repository and clone your fork to a directory on your computer.
+* From the terminal, navigate to the cloned directory and run `uv sync --extra dev` to create a local `.venv` and install OG-BRA with its development dependencies. `uv` will also download a compatible Python interpreter if you don't already have one.
+* For docs/Jupyter Book work, also run `uv sync --extra dev --extra docs`.
+
 ### Run an example of the model
-* Navigate to `./examples`
-* Run the model with an example reform from terminal/command prompt by typing `python run_og_bra.py`
+
+* Navigate to `./examples`.
+* Run the model with an example reform: `uv run python run_og_bra.py` (or activate the venv first with `source .venv/bin/activate` on macOS/Linux or `.\.venv\Scripts\Activate.ps1` on Windows, then `python run_og_bra.py`).
 * You can adjust the `./examples/run_og_bra.py` by modifying model parameters specified in the dictionary passed to the `p.update_specifications()` calls.
 * Model outputs will be saved in the following files:
   * `./examples/OG-BRA_example_plots`
