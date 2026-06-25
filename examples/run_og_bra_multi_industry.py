@@ -8,15 +8,11 @@ import time
 import copy
 import numpy as np
 import importlib.resources
-import matplotlib.pyplot as plt
-import ogcore
 from ogcore.parameters import Specifications
 from ogcore import output_tables as ot
 from ogcore import output_plots as op
 from ogcore.execute import runner
 from ogcore.utils import safe_read_pickle
-from ogbra.calibrate import Calibration
-from ogbra.utils import is_connected
 
 # Use a custom matplotlib style file for plots
 # plt.style.use("ogcore.OGcorePlots")
@@ -55,18 +51,6 @@ def main():
     p.M = 2  # 7
     p.I = 2  # 5
     # Update parameters from calibrate.py Calibration class
-    # c = Calibration(p)
-    # d = c.get_dict()
-    # updated_params = {
-    #     "gamma_g": [0.0] * p.M,
-    #     "epsilon": [1.0] * p.M,
-    #     "gamma": [0.588] * p.M,  #TODO: see if can find diff by industry
-    #      "cit_rate": [[0.25], [0.25]], #[[0.25], [0.25], [0.25], [0.25], [0.25], [0.25], [0.25]],  # TODO: see if can find diff by industry
-    #     "tau_c": [[0.11], [0.11]], #[[0.11], [0.11], [0.11], [0.11], [0.11]],  # TODO: see if can find diff by cons good
-    #     "alpha_c": [0.7, 0.3], #d["alpha_c"],
-    #     "io_matrix": np.eye(2) #d["io_matrix"],
-    # }
-    # p.update_specifications(updated_params)
     informal_spec = {
         "M": 2,
         "I": 2,
@@ -78,13 +62,14 @@ def main():
         "gamma": [
             0.30,
             0.38,
-        ],  # assumption (first sector is informal): informal has lower capital labor ratio
+        ],  # assumption (first sector is informal): informal has lower
+        # capital labor ratio
         "cit_rate": [[0.00], [0.22]],  # no CIT for informal
         "tau_c": [[0.00], [0.12]],  # no VAT for informal
         "alpha_c": [
             0.7,
             0.3,
-        ],  # 36\% of GDP on average https://documents1.worldbank.org/curated/en/099435011152325553/pdf/IDU025ef01630fdd504ae5085e90437dc8b1c171.pdf
+        ],
         "io_matrix": np.eye(2),
     }
     p.update_specifications(informal_spec)

@@ -7,8 +7,6 @@ import json
 import time
 import copy
 import importlib.resources
-import matplotlib.pyplot as plt
-import ogcore
 from ogcore.parameters import Specifications
 from ogcore import output_tables as ot
 from ogcore import output_plots as op

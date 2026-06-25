@@ -8,11 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import importlib
 import json
-import ogcore
+import ogcore.parameter_tables as pt
 from ogcore.parameters import Specifications
 from ogcore import parameter_plots as pp
 from ogcore import demographics as demog
-import ogbra
 
 
 CUR_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -169,9 +168,6 @@ pp.plot_ability_profiles(
 """
 Create table for exogenous parameters
 """
-import ogcore.parameter_tables as pt
-from ogcore import Specifications
-
 table = pt.param_table(
     p,
     table_format="md",
