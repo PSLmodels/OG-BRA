@@ -1196,9 +1196,7 @@
         0.11821167003583827
     ],
     "alpha_I": [
-        0.054,
-        0.054,
-        0.056
+        0.0
     ],
     "infra_investment_leakage_rate": 0.0,
     "alpha_bs_T": [
