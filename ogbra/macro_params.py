@@ -336,20 +336,24 @@ def get_macro_params(
                     " Skipping update for initial_foreign_debt_ratio."
                 )
 
-            print(
-                "initial_foreign_debt_ratio updated from World Bank "
-                f"API: {macro_parameters['initial_foreign_debt_ratio']}"
-            )
-
-            # Compute zeta_D safely
-            macro_parameters["zeta_D"] = [
-                macro_parameters["initial_foreign_debt_ratio"]
-            ]  # Since it's the same formula, we use the same calculated value
-
-            print(
-                "zeta_D updated from World Bank API: "
-                f"{macro_parameters['zeta_D']}"
-            )
+            fdr = macro_parameters.get("initial_foreign_debt_ratio")
+            if fdr is not None:
+                print(
+                    "initial_foreign_debt_ratio updated from World Bank "
+                    f"API: {fdr}"
+                )
+                # Compute zeta_D safely
+                macro_parameters["zeta_D"] = [fdr]
+                print(
+                    "zeta_D updated from World Bank API: "
+                    f"{macro_parameters['zeta_D']}"
+                )
+            else:
+                print(
+                    "Warning: initial_foreign_debt_ratio is None. "
+                    "Skipping initial_foreign_debt_ratio and zeta_D."
+                )
+                macro_parameters.pop("initial_foreign_debt_ratio", None)
 
             # Compute annual GDP growth safely
             if "GDP per capita (constant 2015 US$)" in wb_data_a.columns:
