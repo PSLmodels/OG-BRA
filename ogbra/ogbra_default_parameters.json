@@ -1230,7 +1230,7 @@
     "r_gov_DY2": 0.0,
     "cit_rate": [
         [
-            0.25
+            0.34
         ]
     ],
     "c_corp_share_of_assets": 0.7,
@@ -1244,7 +1244,7 @@
     ],
     "tau_c": [
         [
-            0.12
+            0.09
         ]
     ],
     "delta_tau_annual": [
@@ -2462,7 +2462,7 @@
         0.2
     ],
     "tau_payroll": [
-        0.14
+        0.28
     ],
     "chi_b": [
         80.0,
@@ -103810,7 +103810,7 @@
             ]
         ]
     ],
-    "mean_income_data": 307195.71,
+    "mean_income_data": 43771.0,
     "frac_tax_payroll": [
         0.0
     ]
