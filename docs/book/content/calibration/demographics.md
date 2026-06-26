@@ -57,33 +57,12 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
 
   {numref}`Figure %s <FigFertRatesBRA>` was created using the [`ogcore.demographics.get_fert()`](https://github.com/PSLmodels/OG-Core/blob/master/ogcore/demographics.py#L146) function, which downloaded the data from the United National Data Portal API and plotted it in Python.[^un_data_portal]
 
-  ```{code-cell} ipython3
-  :tags: ["hide-input", "remove-output"]
-  import os
-  import ogcore.demographics as demog
-  plot_path = os.path.join(os.path.abspath(''), 'images')
-
-  fert_rates, fig = demog.get_fert(
-      totpers=100,
-      min_age=0,
-      max_age=99,
-      country_id="076",
-      start_year=YEAR_TO_PLOT,
-      end_year=YEAR_TO_PLOT,
-      graph=True,
-      plot_path=None,
-      download_path=None,
-  )
-  plt.savefig(os.path.join(plot_path, "fert_rates.png"), dpi=300)
-  plt.show()
-  ```
-
   ```{figure} ./images/fert_rates.png
   ---
   height: 400px
   name: FigFertRatesBRA
   ---
-  Brazil fertility rates by age $\left(f_s\right)$ for $E+S=100$: year 2023
+  Brazil fertility rates by age $\left(f_s\right)$ for $E+S=100$
   ```
 
   The fertility rates in the UN data are births per 1,000 women of age-$s$. We adjust the units of those rates to represent the number of births per total population of both men and women of age-$s$.
@@ -96,37 +75,13 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
 
   The mortality rates are a population-weighted average of the male and female mortality rates by one-year age increments reported by United Nations. The maximum age in years in our model is truncated to 100-years old. In addition, we constrain the mortality rate to be 1.0 or 100 percent at the maximum age of 100.
 
-  ```{code-cell} ipython3
-  :tags: ["hide-input", "remove-output"]
-
-  import matplotlib.pyplot as plt
-  import os
-  import ogcore.demographics as demog
-
-  plot_path = os.path.join(os.path.abspath(''), 'images')
-  mort_rates, _, fig = demog.get_mort(
-      totpers=100,
-      min_age=0,
-      max_age=99,
-      country_id="076",
-      start_year=YEAR_TO_PLOT,
-      end_year=YEAR_TO_PLOT,
-      graph=True,
-      plot_path=None,
-      download_path=None,
-  )
-  plt.xlabel(r"Age ($s$)")
-  plt.ylabel(r"Mortality rate ($\rho_s$)")
-  plt.savefig(os.path.join(plot_path, "mort_rates.png"), dpi=300)
-  plt.show()
-  ```
 
   ```{figure} ./images/mort_rates.png
   ---
   height: 400px
   name: FigMortRatesBRA
   ---
-  Brazil mortality rates by age $\left(\rho_{s,t}\right)$ for $E+S=100$: year 2023
+  Brazil mortality rates by age $\left(\rho_{s,t}\right)$ for $E+S=100$
   ```
 
 
@@ -141,38 +96,12 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
       i_{s+1,t+1} &= \frac{\omega_{s+1,t+1} - (1 - \rho_{s,t})\omega_{s,t}}{\omega_{s+1,t}}\qquad\qquad\forall t\quad\text{and}\quad 1\leq s \leq E+S-1
   ```
 
-  ```{code-cell} ipython3
-  :tags: ["hide-input", "remove-output"]
-  import os
-  import matplotlib.pyplot as plt
-  import ogcore.demographics as demog
-  plot_path = os.path.join(os.path.abspath(''), 'images')
-
-  imm_rates, fig = demog.get_imm_rates(
-      totpers=100,
-      min_age=0,
-      max_age=99,
-      fert_rates=None,
-      mort_rates=None,
-      infmort_rates=None,
-      pop_dist=None,
-      country_id="076",
-      start_year=YEAR_TO_PLOT,
-      end_year=YEAR_TO_PLOT + 50,
-      graph=True,
-      plot_path=None,
-      download_path=None,
-  )
-  plt.savefig(os.path.join(plot_path, "imm_rates.png"), dpi=300)
-  plt.show()
-  ```
-
   ```{figure} ./images/imm_rates.png
   ---
   height: 400px
   name: FigImmRatesBRA
   ---
-  Brazil immigration rates by age $\left(i_s\right)$ for $E+S=100$: year 2023
+  Brazil immigration rates by age $\left(i_s\right)$ for $E+S=100$
   ```
 
   We calculate our immigration rates for the consecutive-year-periods of population distribution data 2022 and 2023. The immigration rates $i_{s,t}$ that we use in our model are the the residuals described in {eq}`EqPopImmRates` implied by these two consecutive periods. {numref}`Figure %s <FigImmRatesBRA>` shows the estimated immigration rates for $E+S=100$ and given the fertility rates from Section {ref}`SecDemogFert` and the mortality rates from Section {ref}`SecDemogMort`. These immigration rates reflect Brazil's demographic profile as a country that has historically experienced moderate emigration among working-age adults.[^out_migration]
@@ -303,7 +232,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
   Original immigration rates vs. adjusted immigration rates to make fixed steady-state population distribution
   ```
 
-  We begin with 2023 population data and use the population transition matrix {eq}`EqPopLOMstatmat2` to age it to the start year of the model (e.g., 2025 or 2026). We then use {eq}`EqPopLOMstatmat2` to generate the transition path of the population distribution over the time period of the model. {numref}`Figure %s <FigPopDistPath>` shows the progression from the 2023 population data to the fixed steady-state at period $t=120$. The time path of the growth rate of the economically active population $\tilde{g}_{n,t}$ is shown in {numref}`Figure %s <FigGrowthPath>`.
+  We begin with 2026 population data and use the population transition matrix {eq}`EqPopLOMstatmat2` to age it to the start year of the model (e.g., 2025 or 2026). We then use {eq}`EqPopLOMstatmat2` to generate the transition path of the population distribution over the time period of the model. {numref}`Figure %s <FigPopDistPath>` shows the progression from the 2026 population data to the fixed steady-state at period $t=120$. The time path of the growth rate of the economically active population $\tilde{g}_{n,t}$ is shown in {numref}`Figure %s <FigGrowthPath>`.
 
   ```{figure} ./images/pop_distribution.png
   ---
@@ -311,34 +240,6 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
   name: FigPopDistPath
   ---
   Exogenous stationary population distribution at periods along transition path
-  ```
-
-  ```{code-cell} ipython3
-  :tags: ["hide-input", "remove-output"]
-  import os
-  import ogcore.demographics as demog
-  import matplotlib.pyplot as plt
-  YEAR_TO_PLOT = 2023
-  plot_path = os.path.join(os.path.abspath(''), 'images')
-  fig = pp.plot_pop_growth(
-      p,
-      start_year=YEAR_TO_PLOT,
-      num_years_to_plot=150,
-      include_title=False,
-      path=None,
-  )
-  # Add average growth rate with this
-  plt.plot(
-      np.arange(YEAR_TO_PLOT, YEAR_TO_PLOT + 150),
-      np.ones(150) * np.mean(p.g_n[:150]),
-      linestyle="-",
-      linewidth=1,
-      color="red",
-  )
-  plt.xlabel(r"Model Period ($t$)")
-  plt.ylabel(r"Population Growth Rate ($g_{n,t}$)")
-  plt.savefig(os.path.join(plot_path, "population_growth_rates.png"), dpi=300)
-  plt.show()
   ```
 
   ```{figure} ./images/population_growth_rates.png
