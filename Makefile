@@ -20,6 +20,7 @@ help:
 	@echo "lint          : check formatting and lint with ruff (no changes)"
 	@echo "coverage      : generate test coverage report"
 	@echo "pip-package   : build sdist + wheel via uv build"
+	@echo "new-baseline  : update baseline parameters and save to json file"
 	@echo "documentation : build documentation using jupyter-book"
 
 
@@ -76,6 +77,10 @@ endif
 .PHONY=pip-package
 pip-package:
 	uv build
+
+.PHONY=new-baseline
+new-baseline:
+	uv run python ogbra/update_baseline.py
 
 .PHONY=documentation
 documentation:

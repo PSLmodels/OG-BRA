@@ -12,7 +12,7 @@ CUR_PATH = os.path.abspath(os.path.dirname(__file__))
 OUTPUT_DIR = os.path.join(CUR_PATH, "OUTPUT", "ability")
 
 
-def get_e_interp(E, S, J, lambdas, age_wgts, gini_to_match=52.0, plot=False):
+def get_e_interp(E, S, J, lambdas, age_wgts, gini_to_match=50.3, plot=False):
     """
     This function takes the calibrated lifetime earnings profiles
     (abilities, e matrix) from OG-USA and then adjusts the shape of those
@@ -135,7 +135,7 @@ def get_e_interp(E, S, J, lambdas, age_wgts, gini_to_match=52.0, plot=False):
     ):
         pass  # will return the e_new_scaled found above since dims the same
     else:
-        # generate vector of mid points for the Filipino ability groups
+        # generate vector of mid points for the Brazilian ability groups
         abil_midp = np.zeros(J)
         pct_lb = 0.0
         for j in range(J):

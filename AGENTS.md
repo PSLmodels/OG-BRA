@@ -27,6 +27,7 @@ OG-BRA is a Brazil country calibration of the OG-Core overlapping-generations mo
 - Default suite (matches CI, skips the long example run): `uv run python -m pytest -m 'not local' -q` (or `make test`).
 - Targeted (fast): `uv run python -m pytest tests/test_macro_params.py tests/test_income.py tests/test_input_output.py -q`.
 - Full example run (slow, ~35 min – 2 hr): `uv run python examples/run_og_bra.py`.
+- Update baseline parameters from APIs: `make new-baseline` (runs `ogbra/update_baseline.py`, requires network access, slow).
 
 ## Repo conventions
 
