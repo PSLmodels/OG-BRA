@@ -175,7 +175,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
   Brazil immigration rates by age $\left(i_s\right)$ for $E+S=100$: year 2023
   ```
 
-  We calculate our immigration rates for the consecutive-year-periods of population distribution data 2022 and 2023. The immigration rates $i_{s,t}$ that we use in our model are the the residuals described in {eq}`EqPopImmRates` implied by these two consecutive periods. {numref}`Figure %s <FigImmRatesBRA>` shows the estimated immigration rates for $E+S=100$ and given the fertility rates from Section {ref}`SecDemogFert` and the mortality rates from Section {ref}`SecDemogMort`.
+  We calculate our immigration rates for the consecutive-year-periods of population distribution data 2022 and 2023. The immigration rates $i_{s,t}$ that we use in our model are the the residuals described in {eq}`EqPopImmRates` implied by these two consecutive periods. {numref}`Figure %s <FigImmRatesBRA>` shows the estimated immigration rates for $E+S=100$ and given the fertility rates from Section {ref}`SecDemogFert` and the mortality rates from Section {ref}`SecDemogMort`. These immigration rates reflect Brazil's demographic profile as a country that has historically experienced moderate emigration among working-age adults.[^out_migration]
 
   At the end of Section {ref}`SecDemogPopSSTP`, we describe a small adjustment that we make to the immigration rates after a certain number of periods in order to make computation of the transition path equilibrium of the model compute more robustly.
 
@@ -303,7 +303,7 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
   Original immigration rates vs. adjusted immigration rates to make fixed steady-state population distribution
   ```
 
-  The most recent year of population data come from {cite}`Census:2015` population estimates for both sexes for 2013. We those data and use the population transition matrix {eq}`EqPopLOMstatmat2` to age it to the current model year of 2015. We then use {eq}`EqPopLOMstatmat2` to generate the transition path of the population distribution over the time period of the model. {numref}`Figure %s <FigPopDistPath>` shows the progression from the 2013 population data to the fixed steady-state at period $t=120$. The time path of the growth rate of the economically active population $\tilde{g}_{n,t}$ is shown in {numref}`Figure %s <FigPopDistPath>`.
+  We begin with 2023 population data and use the population transition matrix {eq}`EqPopLOMstatmat2` to age it to the start year of the model (e.g., 2025 or 2026). We then use {eq}`EqPopLOMstatmat2` to generate the transition path of the population distribution over the time period of the model. {numref}`Figure %s <FigPopDistPath>` shows the progression from the 2023 population data to the fixed steady-state at period $t=120$. The time path of the growth rate of the economically active population $\tilde{g}_{n,t}$ is shown in {numref}`Figure %s <FigGrowthPath>`.
 
   ```{figure} ./images/pop_distribution.png
   ---
@@ -353,3 +353,4 @@ We discuss the approach to estimating fertility rates $f_{s,t}$, mortality rates
 [^calibage_note]: Theoretically, the model works without loss of generality for $S\geq 3$. However, because we are calibrating the ages outside of the economy to be one-fourth of $S$ (e.g., ages 21 to 100 in the economy, and ages 1 to 20 outside of the economy), it is convenient for $S$ to be at least 4.
 [^houseprob_note]: The parameter $\rho_s$ is the probability that a household of age $s$ dies before age $s+1$.
 [^un_data_portal]: Note that you might need a UN Data Portal API token to download the data directly from the United Nations Data Portal site. But the [`demographics.py`](https://github.com/PSLmodels/OG-Core/blob/master/ogcore/demographics.py) module will take the data from a pre-downloaded site if the API token is missing or fails.
+[^out_migration]: Brazil has experienced significant emigration, particularly among younger working-age adults seeking opportunities abroad. The United Nations estimates that the net emigration rate has been a persistent feature of Brazil's demographic profile since the 1980s.
