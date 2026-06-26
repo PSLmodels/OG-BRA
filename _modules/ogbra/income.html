@@ -368,7 +368,7 @@
 
 <div class="viewcode-block" id="get_e_interp">
 <a class="viewcode-back" href="../../content/api/income.html#ogbra.income.get_e_interp">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_e_interp</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="n">age_wgts</span><span class="p">,</span> <span class="n">gini_to_match</span><span class="o">=</span><span class="mf">52.0</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_e_interp</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="n">age_wgts</span><span class="p">,</span> <span class="n">gini_to_match</span><span class="o">=</span><span class="mf">50.3</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function takes the calibrated lifetime earnings profiles</span>
 <span class="sd">    (abilities, e matrix) from OG-USA and then adjusts the shape of those</span>
@@ -491,7 +491,7 @@
     <span class="p">):</span>
         <span class="k">pass</span>  <span class="c1"># will return the e_new_scaled found above since dims the same</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># generate vector of mid points for the Filipino ability groups</span>
+        <span class="c1"># generate vector of mid points for the Brazilian ability groups</span>
         <span class="n">abil_midp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
         <span class="n">pct_lb</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>

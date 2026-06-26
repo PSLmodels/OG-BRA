@@ -11,4 +11,4 @@ The [OG-Core firm theory documentation](https://pslmodels.github.io/OG-Core/cont
 
 ### Capital's share of output
 
-Here, we use a default value of $\gamma =0.588$, which comes from national accounts data.
+Here, we use a default value of $\gamma =0.407$, which is derived from the ILO's SDG indicator 10.4.1 (labour share of GDP, series `SDG_1041_NOC_RT_A`) for Brazil.  Capital's share is computed as one minus the labour share.
