@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Regenerated the packaged baseline demographics and earnings profile under
+  ogcore 0.16.3 (mirrors OG-PHL#67 / OG-ZAF#134 / OG-IDN#52 / OG-ETH#63).
+  ogcore 0.16.3 reworked the pre-time-path population handling
+  (PSLmodels/OG-Core#1073): the transition arrays (`omega`, `g_n`,
+  `imm_rates`) shift by one period and three new period-0 seeds
+  (`g_n_preTP`, `imm_rates_preTP`, `rho_preTP`) feed the aggregation of
+  investment, wealth, and bequests. A baseline baked under older ogcore is
+  silently inconsistent under 0.16.3 — the baseline time path converged but
+  failed the resource-constraint check (max error 0.024); with the
+  regenerated demographics it passes (max error 0.0009). Updated the stale
+  README runtime note (runs take roughly 7–9 minutes per scenario, not "35
+  minutes to two hours").
 - Upgraded `ogcore` to 0.16.3 in `uv.lock` (includes the OG-Core time-path
   pre-population restructuring and `g_n` boundary-convention change from
   PSLmodels/OG-Core#1073).

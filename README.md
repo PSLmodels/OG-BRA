@@ -50,7 +50,7 @@ There are two primary methods for installing and running OG-BRA on your computer
     * See [`ogcore.TPI.py`](https://github.com/PSLmodels/OG-Core/blob/master/ogcore/TPI.py) for what is in the dictionary object in this pickle file
   * An analogous set of files in the `./examples/OUTPUT_REFORM` directory, which represent objects from the simulation of the reform policy
 
-Note that, depending on your machine, a full model run (solving for the full time path equilibrium for the baseline and reform policies) can take from 35 minutes to more than two hours of compute time.
+Note that, depending on your machine, a full model run (solving for the full time path equilibrium for the baseline and reform policies) takes roughly 15–20 minutes of compute time (about 7–9 minutes per scenario).
 
 If you run into errors running the example script, please open a new issue in the OG-BRA repo with a description of the issue and any relevant tracebacks you receive.
 
