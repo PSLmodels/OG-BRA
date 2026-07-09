@@ -45,7 +45,7 @@ dependencies = [
     "openpyxl>=3.1.2",
     "statsmodels",
     "linecheck",
-    "ogcore",
+    "ogcore>=0.16.3",
 ]
 
 [project.urls]

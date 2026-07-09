@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Consistency guard tests (`tests/test_consistency.py`): the packaged
+  baseline must validate against the installed ogcore; every pre-time-path
+  demographic seed the installed ogcore defines must be baked into the
+  baseline (fails with a "regenerate demographics" message when ogcore
+  changes its demographics interface); a feature canary and a wheel-RECORD
+  integrity check that fail on stale or corrupted ogcore installs
+  masquerading under a release version number. `pyproject.toml` now floors
+  `ogcore>=0.16.3` so the packaged baseline and installed ogcore cannot
+  silently drift apart.
+
 ### Changed
 
 - Regenerated the packaged baseline demographics and earnings profile under
