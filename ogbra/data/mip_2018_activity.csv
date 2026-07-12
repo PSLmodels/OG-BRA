@@ -1,0 +1,68 @@
+activity_code,activity_label,value_added,compensation,mixed_income,operating_surplus,gross_output,occupations
+0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",209511.0,34356.0,97228.0,85347.0,398037.0,6687599.0
+0192,"Pecuária, inclusive o apoio à pecuária",71692.0,22217.0,38269.0,10684.0,151959.0,5891326.0
+0280,Produção florestal; pesca e aquicultura,28408.0,2255.0,12179.0,13860.0,37870.0,801096.0
+0580,Extração de carvão mineral e de minerais não metálicos,8151.0,4126.0,254.0,3633.0,20011.0,118276.0
+0680,"Extração de petróleo e gás, inclusive as atividades de apoio",100760.0,16917.0,0.0,82275.0,225938.0,50144.0
+0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",45134.0,4502.0,0.0,40026.0,92326.0,35440.0
+0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",7024.0,2607.0,0.0,4247.0,18273.0,28949.0
+1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",45831.0,30117.0,365.0,12868.0,292406.0,765202.0
+1092,Fabricação e refino de açúcar,8424.0,8690.0,0.0,-927.0,51555.0,156442.0
+1093,Outros produtos alimentares,66028.0,35422.0,4151.0,23350.0,324943.0,1285134.0
+1100,Fabricação de bebidas,22080.0,9953.0,23.0,11198.0,78544.0,190956.0
+1200,Fabricação de produtos do fumo,3582.0,1711.0,0.0,1741.0,15694.0,17784.0
+1300,Fabricação de produtos têxteis,16047.0,11262.0,1228.0,3048.0,54793.0,632157.0
+1400,Confecção de artefatos do vestuário e acessórios,28404.0,18543.0,6429.0,2782.0,66432.0,1676586.0
+1500,Fabricação de calçados e de artefatos de couro,15570.0,11048.0,625.0,3407.0,43848.0,468535.0
+1600,Fabricação de produtos da madeira,11759.0,6644.0,1625.0,3158.0,32687.0,376397.0
+1700,"Fabricação de celulose, papel e produtos de papel",31780.0,14028.0,296.0,16597.0,109595.0,201777.0
+1800,Impressão e reprodução de gravações,10260.0,5664.0,460.0,3855.0,21333.0,180593.0
+1991,Refino de petróleo e coquerias,42336.0,8892.0,0.0,32249.0,447501.0,21721.0
+1992,Fabricação de biocombustíveis,11524.0,7013.0,0.0,4134.0,54637.0,98255.0
+2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",26696.0,12903.0,0.0,12505.0,179506.0,92285.0
+2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",15252.0,9380.0,0.0,5167.0,88308.0,85311.0
+2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",10920.0,6854.0,585.0,3002.0,50176.0,137454.0
+2100,Fabricação de produtos farmoquímicos e farmacêuticos,34789.0,12695.0,0.0,21406.0,76244.0,104114.0
+2200,Fabricação de produtos de borracha e de material plástico,29645.0,22917.0,373.0,5278.0,121217.0,444627.0
+2300,Fabricação de produtos de minerais não metálicos,24757.0,19150.0,799.0,4032.0,83888.0,563545.0
+2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",34177.0,13401.0,0.0,19673.0,150065.0,122810.0
+2492,Metalurgia de metais não ferosos e a fundição de metais,15846.0,6247.0,-18.0,9090.0,73148.0,100208.0
+2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",33343.0,22042.0,2385.0,7925.0,101954.0,669483.0
+2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",15600.0,9775.0,0.0,4751.0,103544.0,127233.0
+2700,Fabricação de máquinas e equipamentos elétricos,20034.0,14631.0,0.0,4693.0,79945.0,198332.0
+2800,Fabricação de máquinas e equipamentos mecânicos,37543.0,27620.0,0.0,8755.0,129313.0,378379.0
+2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",23213.0,20483.0,0.0,1419.0,187915.0,160623.0
+2992,Fabricação de peças e acessórios para veículos automotores,30066.0,20855.0,28.0,8255.0,105992.0,305020.0
+3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",10679.0,8257.0,0.0,2054.0,41813.0,81338.0
+3180,Fabricação de móveis e de produtos de indústrias diversas,32728.0,16648.0,1333.0,14050.0,75235.0,744311.0
+3300,"Manutenção, reparação e instalação de máquinas e equipamentos",28515.0,13057.0,5023.0,9949.0,79968.0,532601.0
+3500,"Energia elétrica, gás natural e outras utilidades",121094.0,21495.0,0.0,96561.0,323139.0,158398.0
+3680,"Água, esgoto e gestão de resíduos",50339.0,22993.0,1734.0,24692.0,82220.0,563905.0
+4180,Construção,243280.0,104570.0,68569.0,67121.0,552073.0,7617875.0
+4580,Comércio por atacado e varejo,783047.0,401709.0,81621.0,286375.0,1295672.0,19262504.0
+4900,Transporte terrestre,165215.0,87877.0,25394.0,49960.0,398813.0,4076625.0
+5000,Transporte aquaviário,10075.0,5137.0,430.0,4091.0,23042.0,52733.0
+5100,Transporte aéreo,9954.0,7492.0,0.0,1775.0,44807.0,60529.0
+5280,"Armazenamento, atividades auxiliares dos transportes e correio",79420.0,44037.0,1273.0,32425.0,138844.0,808476.0
+5500,Alojamento,14822.0,11307.0,1302.0,1819.0,27787.0,438611.0
+5600,Alimentação,130511.0,60116.0,48476.0,20178.0,276938.0,5622208.0
+5800,Edição e edição integrada à impressão,8612.0,6798.0,56.0,1530.0,17903.0,136112.0
+5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",16988.0,11678.0,853.0,3095.0,43874.0,166605.0
+6100,Telecomunicações,69944.0,19212.0,253.0,43572.0,166879.0,252106.0
+6280,Desenvolvimento de sistemas e outros serviços de informação,110549.0,57187.0,9240.0,42049.0,167410.0,752017.0
+6480,"Intermediação financeira, seguros e previdência complementar",422662.0,165217.0,2638.0,246584.0,649009.0,1241143.0
+6800,Atividades imobiliárias,588036.0,7923.0,4300.0,575340.0,639752.0,466409.0
+6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas",156875.0,61939.0,39398.0,52878.0,228613.0,1887743.0
+7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",38999.0,18585.0,11034.0,9137.0,62891.0,630552.0
+7380,"Outras atividades profissionais, científicas e técnicas",38814.0,15429.0,6368.0,16497.0,104820.0,613009.0
+7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,30151.0,11344.0,793.0,17644.0,48479.0,298455.0
+7880,Outras atividades administrativas e serviços complementares,176659.0,118404.0,7868.0,46984.0,261715.0,4178701.0
+8000,"Atividades de vigilância, segurança e investigação",35115.0,31074.0,1175.0,1823.0,43096.0,781913.0
+8400,"Administração pública, defesa e seguridade social",616023.0,528703.0,0.0,87157.0,858764.0,4825230.0
+8591,Educação pública,295133.0,282090.0,0.0,13026.0,351095.0,4202039.0
+8592,Educação privada,102884.0,89933.0,7947.0,2190.0,143437.0,2878667.0
+8691,Saúde pública,134229.0,127700.0,0.0,6529.0,202716.0,2218572.0
+8692,Saúde privada,169778.0,89831.0,50020.0,27042.0,302873.0,3428002.0
+9080,"Atividades artísticas, criativas e de espetáculos",22984.0,13265.0,6325.0,3088.0,40366.0,1122849.0
+9480,Organizações associativas e outros serviços pessoais,86399.0,45395.0,32861.0,6944.0,171919.0,4502808.0
+9700,Serviços domésticos,74451.0,74451.0,0.0,0.0,74451.0,6563436.0

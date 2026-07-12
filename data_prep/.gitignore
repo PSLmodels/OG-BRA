@@ -1,0 +1,12 @@
+# Raw source data — reproducible via multi_industry/fetch_data.sh, NOT committed.
+# Keep this repo light (eventual upstream PR): only README + fetch script are tracked.
+*.xlsx
+*.xls
+*.zip
+*.csv
+
+# Excel/LibreOffice lock & temp files
+~$*
+.~lock*
+*.tmp
+.DS_Store

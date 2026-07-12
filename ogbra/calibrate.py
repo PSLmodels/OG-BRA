@@ -48,6 +48,25 @@ class Calibration:
         self.alpha_c = np.array([1.0]) if p.I == 1 else None
         self.io_matrix = np.array([[1.0]]) if p.M == 1 else None
 
+        # io matrix and alpha_c (multi-sector only). These come from the
+        # packaged input-output extracts, not an API, so they are filled
+        # in the offline path too.
+        if p.I > 1:
+            try:
+                alpha_c_dict = io.get_alpha_c()
+                assert p.I == len(list(alpha_c_dict.keys()))
+                self.alpha_c = np.array(list(alpha_c_dict.values()))
+            except Exception as exc:
+                warnings.warn(f"alpha_c update failed: {exc}", stacklevel=2)
+        if p.M > 1:
+            try:
+                io_df = io.get_io_matrix()
+                assert p.M == len(list(io_df.columns))
+                assert p.I == len(list(io_df.index))
+                self.io_matrix = io_df.values
+            except Exception as exc:
+                warnings.warn(f"io_matrix update failed: {exc}", stacklevel=2)
+
         if not update_from_api:
             return
 
@@ -62,22 +81,6 @@ class Calibration:
             )
         except Exception as exc:
             warnings.warn(f"Macro params update failed: {exc}", stacklevel=2)
-
-        # io matrix and alpha_c (multi-sector only)
-        if p.I > 1:
-            try:
-                alpha_c_dict = io.get_alpha_c()
-                assert p.I == len(list(alpha_c_dict.keys()))
-                self.alpha_c = np.array(list(alpha_c_dict.values()))
-            except Exception as exc:
-                warnings.warn(f"alpha_c update failed: {exc}", stacklevel=2)
-        if p.M > 1:
-            try:
-                io_df = io.get_io_matrix()
-                assert p.M == len(list(io_df.keys()))
-                self.io_matrix = io_df.values
-            except Exception as exc:
-                warnings.warn(f"io_matrix update failed: {exc}", stacklevel=2)
 
         # Demographics + income (atomic — e depends on demographic output)
         try:
