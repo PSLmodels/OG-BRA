@@ -44,4 +44,7 @@ docs/book/_build/*
 */OG-BRA_example_plots/*
 *ogbra_example_output.csv
 */OG-BRA-Example/*
+*/OG-BRA-MultiIndustry/*
+*/SINGLE-REF-SS/*
+examples/continuation_ss*.log
 *un_api_token.txt

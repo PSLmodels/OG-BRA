@@ -296,105 +296,218 @@ PARAM_LABELS = {
 """
 Create dictionaries to map micro categories to broad groups
 """
-CONS_DICT = {
-    "Food": [
-        "cmaiz",
-        "crice",
-        "cocer",
-        "coils",
-        "croot",
-        "cvege",
-        "csugr",
-        "ctoba",
-        "ccott",
-        "cfrui",
-        "ccoff",
-        "cocrp",
-        "ccatt",
-        "cpoul",
-        "coliv",
-        "cfore",
-        "cfish",
-        "cfood",
-        "cbeve",
-    ],
-    "Energy and water": ["cmine", "celec", "cwatr"],
-    "Non-durables": [
-        "ctext",
-        "cwood",
-        "cchem",
-        "cnmet",
-        "cmetl",
-    ],
-    "Durables": [
-        "cmach",
-        "coman",
-        "ccons",
-    ],
-    "Services": [
-        "ctrad",
-        "ctran",
-        "chotl",
-        "ccomm",
-        "cfsrv",
-        "creal",
-        "cbsrv",
-        "cpadm",
-        "ceduc",
-        "cheal",
-        "cosrv",
-    ],
+
+# Production side: IBGE SCN Nivel-67 activities -> the model's M = 9
+# industries. Products (Nivel 126) map to activities by their four-digit
+# code prefix (product 01911 -> activity 0191), so this one map also
+# assigns every product to an industry. Verified against the IPEA annual
+# input-output tables (Alves-Passoni & Freitas, 2023); see the industry
+# calibration chapter.
+# Real estate (imputed owner-occupier dwelling rent) is grouped with the
+# financial and business services here, the standard FIRE aggregation
+# (Finance, Insurance, Real Estate); OG-PHL likewise keeps it inside its
+# services sector rather than standing alone.
+# Manufacturing is kept LAST: OG-Core treats the last industry as the
+# numeraire and routes all non-consumption final demand (investment,
+# government purchases) through it, so it must be the investment-goods
+# producer (the same convention as OG-PHL).
+SECTORS = {
+    "agriculture": "Agriculture, forestry & fishing",
+    "mining": "Mining & extractives",
+    "electricity_gas": "Electricity & gas",
+    "water_waste": "Water, sewage & waste",
+    "construction": "Construction",
+    "trade_transport": "Trade, transport & accommodation",
+    "info_fin_business": "Finance, real estate & business services",
+    "public_social_other": "Public, social & other services",
+    "manufacturing": "Manufacturing",
 }
 
-PROD_DICT = {
-    "Agriculture and Fishing": [
-        "amaiz",
-        "arice",
-        "aocer",
-        "aoils",
-        "aroot",
-        "avege",
-        "asugr",
-        "atoba",
-        "acoff",
-        "afrui",
-        "acoff",
-        "aocrp",
-        "acatt",
-        "apoul",
-        "aoliv",
-        "afore",
-        "afish",
-    ],
-    "Mining": [
-        "amine",
-    ],
-    "Utilities": ["aelec", "awatr"],
-    "Construction": ["acons"],
-    "Trade and Transport": [
-        "atrad",
-        "atran",
-    ],
-    "Services": [
-        "ahotl",
-        "acomm",
-        "afsrv",
-        "areal",
-        "absrv",
-        "apadm",
-        "aeduc",
-        "aheal",
-        "aosrv",
-    ],
-    "Manufacturing": [
-        "afood",
-        "abeve",
-        "atext",
-        "awood",
-        "achem",
-        "anmet",
-        "ametl",
-        "amach",
-        "aoman",
-    ],
+ACTIVITY_TO_SECTOR = {
+    # Agriculture, forestry & fishing
+    "0191": "agriculture",
+    "0192": "agriculture",
+    "0280": "agriculture",
+    # Mining & extractives
+    "0580": "mining",
+    "0680": "mining",
+    "0791": "mining",
+    "0792": "mining",
+    # Manufacturing
+    "1091": "manufacturing",
+    "1092": "manufacturing",
+    "1093": "manufacturing",
+    "1100": "manufacturing",
+    "1200": "manufacturing",
+    "1300": "manufacturing",
+    "1400": "manufacturing",
+    "1500": "manufacturing",
+    "1600": "manufacturing",
+    "1700": "manufacturing",
+    "1800": "manufacturing",
+    "1991": "manufacturing",
+    "1992": "manufacturing",
+    "2091": "manufacturing",
+    "2092": "manufacturing",
+    "2093": "manufacturing",
+    "2100": "manufacturing",
+    "2200": "manufacturing",
+    "2300": "manufacturing",
+    "2491": "manufacturing",
+    "2492": "manufacturing",
+    "2500": "manufacturing",
+    "2600": "manufacturing",
+    "2700": "manufacturing",
+    "2800": "manufacturing",
+    "2991": "manufacturing",
+    "2992": "manufacturing",
+    "3000": "manufacturing",
+    "3180": "manufacturing",
+    "3300": "manufacturing",
+    # Electricity & gas (the CLEWS energy node)
+    "3500": "electricity_gas",
+    # Water, sewage & waste (the CLEWS water node)
+    "3680": "water_waste",
+    # Construction
+    "4180": "construction",
+    # Trade, transport & accommodation
+    "4580": "trade_transport",
+    "4900": "trade_transport",
+    "5000": "trade_transport",
+    "5100": "trade_transport",
+    "5280": "trade_transport",
+    "5500": "trade_transport",
+    "5600": "trade_transport",
+    # Finance, real estate & business services (CNAE J, K, L, M, N;
+    # activity 6800 is real estate, dominated by imputed dwelling rent)
+    "5800": "info_fin_business",
+    "5980": "info_fin_business",
+    "6100": "info_fin_business",
+    "6280": "info_fin_business",
+    "6480": "info_fin_business",
+    "6800": "info_fin_business",
+    "6980": "info_fin_business",
+    "7180": "info_fin_business",
+    "7380": "info_fin_business",
+    "7700": "info_fin_business",
+    "7880": "info_fin_business",
+    "8000": "info_fin_business",
+    # Public, social & other services
+    "8400": "public_social_other",
+    "8591": "public_social_other",
+    "8592": "public_social_other",
+    "8691": "public_social_other",
+    "8692": "public_social_other",
+    "9080": "public_social_other",
+    "9480": "public_social_other",
+    "9700": "public_social_other",
 }
+
+# Consumption side: the I = 7 consumption goods, defined as groups of the
+# 126 MIP products by four-digit activity prefix. Electricity and water
+# are their own goods for the OG-CLEWS energy and water linkages. Note
+# that product 35001 bundles electricity with piped gas (bottled cooking
+# gas is a refining product, already in fuels).
+CONS_CATEGORIES = {
+    "food_bev": "Food and beverages",
+    "electricity": "Electricity",
+    "water": "Water, sewage & waste services",
+    "fuels": "Fuels",
+    "nondurables": "Non-durables",
+    "durables": "Durables",
+    "services": "Services",
+}
+
+PREFIX_TO_CONS_CATEGORY = {
+    # Food and beverages
+    "0191": "food_bev",
+    "0192": "food_bev",
+    "0280": "food_bev",
+    "1091": "food_bev",
+    "1092": "food_bev",
+    "1093": "food_bev",
+    "1100": "food_bev",
+    # Electricity (incl. piped gas and other network utilities)
+    "3500": "electricity",
+    # Water, sewage & waste
+    "3680": "water",
+    # Fuels (refining, biofuels, coal, oil & gas extraction)
+    "1991": "fuels",
+    "1992": "fuels",
+    "0580": "fuels",
+    "0680": "fuels",
+    # Non-durables
+    "1200": "nondurables",
+    "1300": "nondurables",
+    "1400": "nondurables",
+    "1500": "nondurables",
+    "1600": "nondurables",
+    "1700": "nondurables",
+    "1800": "nondurables",
+    "2091": "nondurables",
+    "2092": "nondurables",
+    "2093": "nondurables",
+    "2100": "nondurables",
+    "2200": "nondurables",
+    "2300": "nondurables",
+    # Durables
+    "2491": "durables",
+    "2492": "durables",
+    "2500": "durables",
+    "2600": "durables",
+    "2700": "durables",
+    "2800": "durables",
+    "2991": "durables",
+    "2992": "durables",
+    "3000": "durables",
+    "3180": "durables",
+    "0791": "durables",
+    "0792": "durables",
+    # Services
+    "3300": "services",
+    "4180": "services",
+    "4580": "services",
+    "4900": "services",
+    "5000": "services",
+    "5100": "services",
+    "5280": "services",
+    "5500": "services",
+    "5600": "services",
+    "5800": "services",
+    "5980": "services",
+    "6100": "services",
+    "6280": "services",
+    "6480": "services",
+    "6800": "services",
+    "6980": "services",
+    "7180": "services",
+    "7380": "services",
+    "7700": "services",
+    "7880": "services",
+    "8000": "services",
+    "8400": "services",
+    "8591": "services",
+    "8592": "services",
+    "8691": "services",
+    "8692": "services",
+    "9080": "services",
+    "9480": "services",
+    "9700": "services",
+}
+
+# Economy-wide capital share of factor income, computed from the 2018 MIP
+# with mixed income split like the rest of the economy (the Gollin
+# correction): gross operating surplus / (compensation + gross operating
+# surplus). The raw sector capital shares from the MIP include all mixed
+# income as capital; get_gamma rescales their level to this target while
+# keeping the cross-industry pattern.
+TOTAL_CAPITAL_SHARE = 0.428
+
+# Public capital's share of output by industry, carved out of the total
+# capital share (following OG-PHL); see the government calibration chapter.
+PUBLIC_CAPITAL_SHARE = 0.05
+
+# National capital-output ratio anchoring the capital level in the TFP
+# residual: Penn World Table 10.x for Brazil, 2018 (rnna / rgdpna, via
+# FRED series RKNANPBRA666NRUG and RGDPNABRA666NRUG).
+CAPITAL_OUTPUT_RATIO = 4.36

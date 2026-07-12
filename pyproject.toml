@@ -80,6 +80,7 @@ include = ["ogbra*"]
 [tool.setuptools.package-data]
 ogbra = [
     "ogbra_default_parameters.json",
+    "ogbra_multisector_default_parameters.json",
     "data/*",
 ]
 
@@ -88,6 +89,9 @@ line-length = 79
 target-version = "py311"
 exclude = [
     "**/*.ipynb",
+    # One-off data-extraction and provenance scripts, not maintained
+    # package code (see the multi-industry data_prep README).
+    "data_prep",
 ]
 
 [tool.ruff.lint]

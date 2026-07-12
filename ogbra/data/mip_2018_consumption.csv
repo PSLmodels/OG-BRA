@@ -1,0 +1,127 @@
+product_code,product_label,hh_consumption_consumer_prices,hh_consumption_domestic_basic,hh_taxes_on_products
+01911,"Arroz, trigo e outros cereais",707.0,451.090780897266,16.5713011833597
+01912,Milho em grão,3865.0,3383.01239112892,42.4056119287206
+01913,"Algodão herbáceo, outras fibras da lavoura temporária",7.0,7.00000010587001,0.0
+01914,Cana-de-açúcar,1598.0,1598.00000006959,0.0
+01915,Soja  em grão,116.0,116.000000926459,0.0
+01916,Outros produtos e serviços da lavoura temporária,60350.0,37295.8832103251,1646.37165246813
+01917,Laranja,3740.0,2354.45149857494,113.803606560041
+01918,Café em grão,566.0,566.000004059866,0.0
+01919,Outros produtos da lavoura permanente,34184.0,19971.0144039997,1645.21665078241
+01921,"Bovinos e outros animais vivos, produtos animal, caça e serviços",1187.0,825.038297378379,104.302255001111
+01922,Leite de vaca e de outros animais,13709.0,11328.2571415141,280.272437863399
+01923,Suínos,314.0,254.269968779153,16.5025419842244
+01924,Aves e ovos,12637.0,9546.65413744923,791.494455741982
+02801,Produtos da exploração florestal e da silvicultura,9698.0,7203.78825452521,1189.13235043508
+02802,"Pesca e aquicultura (peixe, crustáceos e moluscos)",17582.0,11680.092876418,1211.04090974566
+05801,Carvão mineral,0.0,0.0,0.0
+05802,Minerais não metálicos,0.0,0.0,0.0
+06801,"Petróleo, gás natural e serviços de apoio",0.0,0.0,0.0
+07911,Minério de ferro,0.0,0.0,0.0
+07921,Minerais metálicos não ferrosos,0.0,0.0,0.0
+10911,Carne de bovinos e outros produtos de carne,136279.0,82180.6037781075,12083.8231680281
+10912,Carne de suíno,9219.0,6463.57824375317,788.515054268513
+10913,Carne de aves,41436.0,26841.7871783549,4086.99754951234
+10914,Pescado industrializado,9189.0,3677.16468329287,1325.69246773933
+10915,"Leite resfriado, esterilizado e pasteurizado",18097.0,11376.3778929631,2717.29136123278
+10916,Outros produtos do laticínio,76244.0,46729.888796619,11049.8873124422
+10921,Açúcar,8730.0,3404.57167668222,1177.6786088055
+10931,"Conservas de frutas, legumes, outros vegetais e sucos de frutas",30866.0,13893.6980147886,5268.27340991889
+10932,Óleos e gorduras vegetais e animais,23768.0,15506.5395830608,3196.73764915773
+10933,Café beneficiado,19159.0,10015.8815339328,2518.4758429923
+10934,Arroz beneficiado e produtos derivados do arroz,23876.0,12841.3015709817,1828.30687740839
+10935,"Produtos derivados do trigo, mandioca ou milho",33791.0,18730.8225984089,3075.95863732664
+10936,Rações balanceadas para animais,14960.0,8664.11014966859,1378.82364252319
+10937,Outros produtos alimentares,182582.0,102699.535627344,21718.7456059266
+11001,Bebidas,77659.0,39491.1551405186,18285.100431879
+12001,Produtos do fumo,31342.0,7041.58248133639,11997.8916723556
+13001,Fios e fibras têxteis beneficiadas,93.0,53.6951964869561,13.0936449276446
+13002,Tecidos,1600.0,1099.97610582513,296.59155357569
+13003,Artigos têxteis de uso doméstico e outros têxteis,41014.0,15566.2404094811,6343.05980869771
+14001,Artigos do vestuário e acessórios,139172.0,52573.3524490807,21941.4509505419
+15001,Calçados e artefatos de couro,62143.0,26121.6605229225,11220.0444987717
+16001,"Produtos de madeira, exclusive móveis",2774.0,1604.55050632298,361.97154302381
+17001,Celulose,0.0,0.0,0.0
+17002,"Papel, papelão, embalagens e artefatos de papel",19973.0,11428.7643370971,3442.19306893518
+18001,Serviços de impressão e reprodução,751.0,292.729984176047,67.1419014701411
+19911,Combustíveis para aviação,691.0,217.679604225585,234.70118605894
+19912,Gasoálcool,154309.0,89884.5463511873,35303.7170025898
+19913,Naftas para petroquímica,0.0,0.0,0.0
+19914,Óleo combustível,0.0,0.0,0.0
+19915,Diesel - biodiesel,7322.0,5352.633372583,1042.84311677094
+19916,Outros produtos do refino do petróleo,36410.0,9795.15218772891,6975.60722718336
+19921,Etanol e outros biocombustíveis,55236.0,31578.9454655534,13752.190279187
+20911,Produtos químicos inorgânicos,31.0,14.6262696124797,6.5454832355751
+20912,Adubos e fertilizantes,0.0,0.0,0.0
+20913,Produtos químicos orgânicos,0.0,0.0,0.0
+20914,"Resinas, elastômeros e fibras artificiais e sintéticas",0.0,0.0,0.0
+20921,Defensivos agrícolas e desinfestantes domissanitários,749.0,239.965353075308,147.660113104702
+20922,Produtos químicos diversos,657.0,224.239198148521,138.910035301206
+20923,"Tintas, vernizes, esmaltes e lacas",426.0,288.246492793197,25.410387533465
+20931,"Perfumaria, sabões e artigos de limpeza",97270.0,34726.3104249477,22109.4347831933
+21001,Produtos farmacêuticos,109920.0,48988.2556470407,15560.2860910356
+22001,Artigos de borracha,11110.0,4388.42487687341,2642.6653300837
+22002,Artigos de plástico,8781.0,5673.92233001147,1743.93984600575
+23001,Cimento,0.0,0.0,0.0
+23002,"Artefatos de cimento, gesso e semelhantes",0.0,0.0,0.0
+23003,"Vidros, cerâmicos e outros produtos de minerais não metálicos",4540.0,1501.07712947318,1020.62575569926
+24911,Ferro gusa e ferroligas,0.0,0.0,0.0
+24912,"Semi acabados, laminados planos, longos e tubos de aço",268.0,116.974950162347,43.654706208682
+24921,Produtos da metalurgia de metais não ferrosos,618.0,349.754645826368,26.5073353215067
+24922,Peças fundidas de aço e de metais não ferrosos,0.0,0.0,0.0
+25001,"Produtos de metal, exclusive máquinas e equipamentos",18665.0,9420.82509610439,3039.23828758931
+26001,Componentes eletrônicos,0.0,0.0,0.0
+26002,Máquinas para escritório e equipamentos de informática,26081.0,9315.15517899828,5301.83788153895
+26003,Material eletrônico e equipamentos de comunicações,65341.0,27375.3284994591,13464.5500892568
+26004,"Equipamentos de medida, teste e controle, ópticos e eletromédicos",5376.0,1052.38491801326,817.061373602194
+27001,"Máquinas, aparelhos e materiais elétricos",3872.0,1036.56586506249,1099.6620373098
+27002,Eletrodomésticos,47137.0,16889.3949549133,9907.01267076154
+28001,Tratores e outras máquinas agrícolas,355.0,95.0205478646912,70.6908682324044
+28002,Máquinas para a extração mineral e a construção,0.0,0.0,0.0
+28003,Outras máquinas e equipamentos mecânicos,7194.0,3520.54574763051,1783.09126516369
+29911,"Automóveis, camionetas e utilitários",134900.0,59646.9237707351,26099.2282722296
+29912,"Caminhões e ônibus, inclusive cabines, carrocerias e reboques",2950.0,1652.03332222948,477.846957387136
+29921,Peças e acessórios para veículos automotores,0.0,0.0,0.0
+30001,"Aeronaves, embarcações e outros equipamentos de transporte",18027.0,7157.38057996283,4060.71056317099
+31801,Móveis,65127.0,29526.6244297717,6920.40080848776
+31802,Produtos de industrias diversas,49239.0,14764.197684694,9198.54610322352
+33001,"Manutenção, reparação e instalação de máquinas e equipamentos",593.0,558.064113756022,34.9358975697151
+35001,"Eletricidade, gás e outras utilidades",121136.0,89751.9919185672,30713.9537177054
+36801,"Água, esgoto, reciclagem e gestão de resíduos",39148.0,37477.6103440096,1670.38998557072
+41801,Edificações,0.0,0.0,0.0
+41802,Obras de infraestrutura,0.0,0.0,0.0
+41803,Serviços especializados para construção,0.0,0.0,0.0
+45801,Comércio por atacado e varejo,55666.0,658124.072303208,1058.8036530392
+49001+51001,Transporte de carga (terrestre e aquaviário),4085.0,14519.7876562045,369.828628918292
+49002,Transporte terrestre de passageiros,99394.0,87745.9209226929,8761.16341188048
+50001,Transporte aéreo,12780.0,9574.19436555426,610.788926330414
+52801,Armazenamento e serviços auxiliares aos transportes,33966.0,31974.2609155519,1991.73933863215
+52802,Correio e outros serviços de entrega,2284.0,2130.66922646455,153.33077294344
+55001,Serviços de alojamento em hotéis e similares,13527.0,5210.65665401333,1085.28838041654
+56001,Serviços  de alimentação,273337.0,234189.119406819,27036.2788532865
+58001,"Livros, jornais e revistas",15267.0,7710.17313517411,356.651037473986
+59801,"Serviços cinematográficos, música, rádio e televisão",1975.0,1833.52185320148,125.235442422617
+61001,"Telecomunicações, TV por assinatura e outros serviços relacionados",126778.0,93377.1111746695,33070.7125507392
+62801,Desenvolvimento de sistemas e outros serviços de informação,2375.0,551.84468049185,295.887299526437
+64801,"Intermediação financeira, seguros e previdência complementar",334777.0,297217.223862116,36569.7758051602
+68001,Aluguel efetivo e serviços imobiliários,118834.0,118523.402133773,310.598185144055
+68002,Aluguel imputado,460205.0,460205.0,0.0
+69801,"Serviços jurídicos, contabilidade e consultoria",20233.0,18950.9846350007,1101.6101433442
+71801,Pesquisa e desenvolvimento,0.0,0.0,0.0
+71802,Serviços de arquitetura e engenharia,677.0,405.658456601792,39.4113280738917
+73801,Publicidade e outros serviços técnicos,2118.0,2068.50077351226,49.4992243352921
+77001,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,4661.0,2987.51563214811,151.125077263456
+78801,Condomínios e serviços para edifícios,2724.0,2701.55709053568,22.4429139862159
+78802,Outros serviços administrativos,13044.0,11437.2536324274,754.604340787254
+80001,"Serviços de vigilância, segurança e investigação",488.0,467.702118230266,20.2978817698698
+84001,Serviços coletivos da administração pública,0.0,0.0,0.0
+84002,Serviços de previdência e assistência social,0.0,0.0,0.0
+85911,Educação pública,0.0,0.0,0.0
+85921,Educação privada,134182.0,130717.233921164,2336.29685493175
+86911,Saúde pública,0.0,0.0,0.0
+86921,Saúde privada,224203.0,217408.380808213,5917.61918386386
+90801,"Serviços de artes, cultura, esporte e recreação",33654.0,21233.6446069001,7040.79300743768
+94801,"Organizações patronais, sindicais e outros serviços associativos",34453.0,34453.0,0.0
+94802,"Manutenção de computadores, telefones e objetos domésticos",11575.0,11264.6755520517,310.324448078579
+94803,Serviços pessoais,53379.0,52651.8782987662,727.121701234184
+97001,Serviços domésticos,74451.0,74451.0,0.0

@@ -79,13 +79,18 @@ class TestOfflineMode:
     @patch("ogbra.calibrate.macro_params")
     @patch("ogbra.calibrate.io")
     def test_no_external_calls(self, mock_io, mock_macro):
-        """Offline mode should not call any external-facing functions."""
+        """Offline mode should not call any external-facing functions.
+
+        The input-output objects come from packaged data, not an API, so
+        multi-sector dimensions DO read them offline; only the macro and
+        demographic API pulls must stay untouched.
+        """
         p = _make_mock_p(I=5, M=4)
         Calibration(p, update_from_api=False)
 
         mock_macro.get_macro_params.assert_not_called()
-        mock_io.get_alpha_c.assert_not_called()
-        mock_io.get_io_matrix.assert_not_called()
+        mock_io.get_alpha_c.assert_called_once()
+        mock_io.get_io_matrix.assert_called_once()
 
 
 class TestOnlinePartialFailure:
