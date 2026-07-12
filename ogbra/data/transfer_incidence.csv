@@ -1,0 +1,4 @@
+program,spending_2024_rbn,q1,q2,q3,q4,q5,incidence_source
+bolsa_familia,168,0.73,0.21,0.04,0.015,0.005,World Bank Second Bolsa Familia Project (P101504); CEQ CC -0.51
+bpc,112,0.55,0.25,0.12,0.06,0.02,consistent with CEQ CC -0.45 (market-income ranking); contrast WB PER 2017 post-transfer ranking
+seguro_desemprego_abono,106,0.03,0.24,0.46,0.19,0.08,fitted to IPEA Relatorio de Pesquisa (abono coverage): 15% of eligible in bottom 30% and half above the median of household per-capita income (PNAD 2013)

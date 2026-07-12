@@ -17,13 +17,15 @@ We set $\zeta_D = 0.146$.  This was not directly observed in the data, so the va
 
 ### Foreign holdings of excess capital
 
-We set $\zeta_K = 0.9$. Note, this parameter is harder to pin down from the data as foreign purchases on "excess" capital demand is not typically directly measured or reported.  A value of 0.9 implies a high degree of openness to international capital flows.
+We set $\zeta_K = 0.16$, the normalized Chinn-Ito capital-account openness index (`ka_open`) for Brazil, which is 0.1626 in the [2022 update](https://web.pdx.edu/~ito/Chinn-Ito_website.htm) (unchanged in recent years). This parameter is hard to pin down directly since foreign purchases of "excess" capital demand are not measured; the Chinn-Ito index anchors it to Brazil's de jure openness, which is low because capital-flow management measures (such as the IOF tax on financial transactions and registration requirements for foreign investment) remain in place. De facto participation by non-residents in Brazilian capital markets is considerably higher, so 0.16 is a conservative anchor. (The previous value of 0.9 implied near-total foreign absorption of excess capital demand, which has no empirical basis for Brazil.)
 
 ## Government Debt, Spending and Transfers
 
 ### Government Debt
 
 The path of government debt is endogenous.  But the initial value is exogenous.  To avoid converting between model units and dollars, we calibrate the initial debt to GDP ratio, rather than the dollar value of the debt.  This is the model parameter $\alpha_D$.  We compute this from the World Bank's Quarterly Public Sector Debt (QPSD) database (`DP.DOD.DECT.CR.GG.Z1`).  The most recent available value gives an initial debt-to-GDP ratio of 0.741.
+
+The long-run debt target `debt_ratio_ss` is set to 0.99: the IMF's 2025 Article IV consultation projects Brazil's general government gross debt to stabilize at around 99% of GDP in 2030 ([IMF Country Report 25/194](https://www.imf.org/-/media/files/publications/cr/2025/english/1braea2025001-source-pdf.pdf)).
 
 ### Aggregate transfers
 
