@@ -3,36 +3,155 @@
 | | |
 | --- | --- |
 | Org | [![PSL cataloged](https://img.shields.io/badge/PSL-cataloged-a0a0a0.svg)](https://www.PSLmodels.org) [![OS License: CC0-1.0](https://img.shields.io/badge/OS%20License-CC0%201.0-yellow)](https://github.com/PSLmodels/OG-BRA/blob/main/LICENSE) |
-| Package | [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3119/) [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3129/) [![PyPI Latest Release](https://img.shields.io/pypi/v/ogbra.svg)](https://pypi.org/project/ogbra/) [![PyPI Downloads](https://img.shields.io/pypi/dm/ogbra.svg?label=PyPI%20downloads)](https://pypi.org/project/ogbra/) [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff) |
+| Package | [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3119/) [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3129/) [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff) |
 | Testing | ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/build_and_test.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/deploy_docs.yml/badge.svg?branch=main) ![example event parameter](https://github.com/PSLmodels/OG-BRA/actions/workflows/check_ruff.yml/badge.svg?branch=main) [![Codecov](https://codecov.io/gh/PSLmodels/OG-BRA/branch/main/graph/badge.svg)](https://codecov.io/gh/PSLmodels/OG-BRA) |
 
 OG-BRA is an overlapping-generations (OG) model that allows for dynamic general equilibrium analysis of fiscal policy for Brazil. OG-BRA is built on the OG-Core framework. The model output includes changes in macroeconomic aggregates (GDP, investment, consumption), wages, interest rates, and the stream of tax revenues over time. Regularly updated documentation of the model theory--its output, and solution method--and the Python API is available at https://pslmodels.github.io/OG-Core and documentation of the specific Brazil calibration of the model will be available soon.
 
 
-## Using and contributing to OG-BRA
+## Installation
 
-There are two primary methods for installing and running OG-BRA on your computer locally. The first and simplest method is to download the most recent `ogbra` Python package from the Python Package Index ([PyPI.org](https://pypi.org/project/ogbra/)). The second option is to fork and clone the most recent version of OG-BRA from its GitHub repository and install the `ogbra` package with its development dependencies using `uv`. Both methods are detailed below.
+OG-BRA is installed from this GitHub repository. (There is no `pip install ogbra` from PyPI: a PyPI install would not pin the version of OG-Core the model is tested with, and on older Pythons `pip` silently resolves years-old releases. Installing from the repository uses `uv.lock`, which pins the exact tested versions.)
 
-### Installing and Running OG-BRA from PyPI
+There are two ways to install. The easy way is the OG family's universal installer, which sets up everything in one step. The manual way does the same steps one at a time.
 
-* On macOS, first install Xcode Command Line Tools (in Terminal: `xcode-select --install`).
-* Open your terminal and install the [`ogbra`](https://pypi.org/project/ogbra/) package from the Python Package Index by typing `pip install ogbra`.
-* Navigate to a folder `./YourFolderName/` where you want to save scripts to run OG-BRA and output from the simulations in those scripts.
-* Copy the python script [`run_og_bra.py`](https://github.com/PSLmodels/OG-BRA/blob/main/examples/run_og_bra.py) from the OG-BRA GitHub repository into your folder as `./YourFolderName/run_og_bra.py`.
-* Run the model with an example reform from terminal/command prompt by typing `python run_og_bra.py`.
+### The easy way: the universal installer
 
-### Installing and Running OG-BRA from the GitHub repository
+The installer needs only [Git](https://git-scm.com/). It installs [`uv`](https://docs.astral.sh/uv/) if needed, clones OG-BRA into a folder named `OG-BRA` inside your current directory, creates a Python environment in `OG-BRA/.venv` with everything the model needs (downloading a compatible Python if necessary), and verifies the installation.
 
-* On macOS, first install Xcode Command Line Tools (in Terminal: `xcode-select --install`).
-* Install [`uv`](https://docs.astral.sh/uv/) by following the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) for your platform (or simply run `pip install uv`).
-* Fork this repository and clone your fork to a directory on your computer.
-* From the terminal, navigate to the cloned directory and run `uv sync --extra dev` to create a local `.venv` and install OG-BRA with its development dependencies. `uv` will also download a compatible Python interpreter if you don't already have one.
-* For docs/Jupyter Book work, also run `uv sync --extra dev --extra docs`.
+**macOS** — open Terminal and run each line:
+
+```
+xcode-select --install
+```
+
+(That installs Git and Apple's command line tools; it is only needed once, and it is fine if it says the tools are already installed.) Then:
+
+```
+curl -fsSL https://raw.githubusercontent.com/PSLmodels/OG-Core/master/scripts/install.sh -o install.sh
+bash install.sh --repo og-bra --yes
+```
+
+**Linux** — Git is usually preinstalled (if not, install it with your distribution's package manager, e.g. `sudo apt install git`). Then:
+
+```
+curl -fsSL https://raw.githubusercontent.com/PSLmodels/OG-Core/master/scripts/install.sh -o install.sh
+bash install.sh --repo og-bra --yes
+```
+
+**Windows** — open PowerShell and run each line:
+
+```
+winget install --id Git.Git -e --source winget
+```
+
+Close and reopen PowerShell (so Git is on your PATH), then:
+
+```
+Invoke-WebRequest -UseBasicParsing -Uri https://raw.githubusercontent.com/PSLmodels/OG-Core/master/scripts/install.ps1 -OutFile install.ps1
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -Repo og-bra -Yes
+```
+
+More installer options (choosing a destination folder, installing other OG country models) are documented in [OG-Core's quick-install guide](https://github.com/PSLmodels/OG-Core/blob/master/scripts/QUICK_INSTALL.md).
+
+### Manual install
+
+**macOS** — open Terminal and run each line:
+
+```
+xcode-select --install
+```
+
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+```
+source $HOME/.local/bin/env
+```
+
+(That last line puts the just-installed `uv` on the current shell's PATH; new terminal windows will have it automatically.) Then:
+
+```
+git clone https://github.com/PSLmodels/OG-BRA.git
+```
+
+```
+cd OG-BRA
+```
+
+```
+uv sync --extra dev
+```
+
+**Linux** — same idea, run each line (install Git first with your package manager if it is missing):
+
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+```
+source $HOME/.local/bin/env
+```
+
+```
+git clone https://github.com/PSLmodels/OG-BRA.git
+```
+
+```
+cd OG-BRA
+```
+
+```
+uv sync --extra dev
+```
+
+**Windows** — open PowerShell and run each line:
+
+```
+winget install --id Git.Git -e --source winget
+```
+
+```
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Close and reopen PowerShell (so Git and `uv` are on your PATH), then:
+
+```
+git clone https://github.com/PSLmodels/OG-BRA.git
+```
+
+```
+cd OG-BRA
+```
+
+```
+uv sync --extra dev
+```
+
+On every platform this leaves you with an `OG-BRA` folder inside the directory where you ran `git clone`, containing the model code and a ready-to-use Python environment in `OG-BRA/.venv`. `uv sync` downloads a compatible Python interpreter if you don't already have one. For docs/Jupyter Book work, also run `uv sync --extra dev --extra docs`.
+
+If you want to contribute changes rather than just run the model, fork this repository on GitHub first and clone your fork instead; the [contributor guide](docs/book/content/contributing/contributor_guide.md) walks through the whole workflow.
 
 ### Run an example of the model
 
-* Navigate to `./examples`.
-* Run the model with an example reform: `uv run python run_og_bra.py` (or activate the venv first with `source .venv/bin/activate` on macOS/Linux or `.\.venv\Scripts\Activate.ps1` on Windows, then `python run_og_bra.py`).
+From the `OG-BRA` folder:
+
+```
+cd examples
+```
+
+```
+uv run python run_og_bra.py
+```
+
+(`uv run` uses the project's `.venv` automatically. If you prefer to activate the environment first: `source .venv/bin/activate` on macOS/Linux, or `.\.venv\Scripts\Activate.ps1` on Windows, then `python run_og_bra.py`.)
+
+**What happens when you run it:**
+
+* If you are connected to the internet, the model refreshes its calibration inputs, including United Nations demographic data. If you are asked for a UN Data Portal API token, just press return — the model falls back to a public data mirror.
+* A full run (solving the baseline and reform time paths) takes from about 35 minutes to more than two hours, depending on your machine.
 * You can adjust the `./examples/run_og_bra.py` by modifying model parameters specified in the dictionary passed to the `p.update_specifications()` calls.
 * Model outputs will be saved in the following files:
   * `./examples/OG-BRA_example_plots`
@@ -50,8 +169,6 @@ There are two primary methods for installing and running OG-BRA on your computer
     * See [`ogcore.TPI.py`](https://github.com/PSLmodels/OG-Core/blob/master/ogcore/TPI.py) for what is in the dictionary object in this pickle file
   * An analogous set of files in the `./examples/OUTPUT_REFORM` directory, which represent objects from the simulation of the reform policy
 
-Note that, depending on your machine, a full model run (solving for the full time path equilibrium for the baseline and reform policies) can take from 35 minutes to more than two hours of compute time.
-
 If you run into errors running the example script, please open a new issue in the OG-BRA repo with a description of the issue and any relevant tracebacks you receive.
 
 Once the package is installed, one can adjust parameters in the OG-Core `Specifications` object using the `Calibration` class as follows:
@@ -66,7 +183,7 @@ p.update_specifications({'initial_debt_ratio': updated_params['initial_debt_rati
 ```
 
 ## Disclaimer
-The organization of this repository will be changing rapidly, but the `OG-BRA/examples/run_og_bra.py` script will be kept up to date to run with the master branch of this repo.
+The organization of this repository will be changing rapidly, but the `OG-BRA/examples/run_og_bra.py` script will be kept up to date to run with the main branch of this repo.
 
 ## Core Maintainers
 
