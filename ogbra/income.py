@@ -139,8 +139,8 @@ def get_e_interp(E, S, J, lambdas, age_wgts, gini_to_match=50.3, plot=False):
         emat_j_midp = np.zeros(M)
         pct_lb = 0.0
         for m in range(M):
-            emat_j_midp[m] = pct_lb + 0.5 * usa_params.lambdas[m]
-            pct_lb += usa_params.lambdas[m]
+            emat_j_midp[m] = pct_lb + 0.5 * float(usa_params.lambdas[m])
+            pct_lb += float(usa_params.lambdas[m])
 
         # Make sure that values in abil_midp are within interpolating
         # bounds
