@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ogbra"
-version = "0.1.0"
+version = "0.2.0"
 authors = [
     {name = "Marcelo LaFleur, Richard W. Evans, Jason DeBacker, and Aidan Atance"},
 ]
 description = "Brazil Calibration for OG-Core"
 readme = "README.md"
 license = {text = "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"}
-requires-python = ">=3.11, <3.14"
+requires-python = ">=3.12, <3.14"
 keywords = [
     "BRA",
     "Brazil",
@@ -27,7 +27,6 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Information Analysis",
@@ -41,12 +40,12 @@ dependencies = [
     "matplotlib",
     "dask>=2.30.0",
     "distributed>=2.30.1",
-    "paramtools>=0.15.0",
+    "paramtools>=0.20.0",
     "requests",
     "openpyxl>=3.1.2",
     "statsmodels",
     "linecheck",
-    "ogcore",
+    "ogcore>=0.18.1",
 ]
 
 [project.urls]
@@ -85,7 +84,7 @@ ogbra = [
 
 [tool.ruff]
 line-length = 79
-target-version = "py311"
+target-version = "py312"
 exclude = [
     "**/*.ipynb",
 ]
